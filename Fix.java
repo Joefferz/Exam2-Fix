@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 /**
  * Exam2-Fix.
  *
@@ -12,11 +13,11 @@ public class Fix
         
         temperatures.add(36.5);
         temperatures.add(38.5);
-        temperatures.add(45.5);
         temperatures.add(30.5);
         temperatures.add(50.5);
         temperatures.add(57.5);
         temperatures.add(25.5);
+        temperatures.add(45.5);
         
         getMaxTemperature(temperatures);
     }
@@ -47,17 +48,19 @@ public class Fix
         {
             if(temps > 37.5)
             {
-                max = temps;
                 count++;
             }
+            if (temps > max)
+            {
+                max = temps;
+            }
         }
-        System.out.println(count);
-        System.out.println(max);
+        System.out.println("Number of cases of fever: " + count);
+        System.out.println("Highest temperature recorded: " + max);
+        //question 26
+        System.out.println("Highest temperature recorded: " + Collections.max(temperatures));
+        //question 27
+        Collections.sort(temperatures);
+        System.out.println("Highest temperature recorded: " + temperatures.getLast());
     }
-      
-    //question 26
-    //temps.max();
-    
-    //question 27
-    //maxTemp.sort(temps.max());
 }
