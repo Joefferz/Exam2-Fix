@@ -47,7 +47,8 @@ public class Fix
         {
             if(temps > 37.5)
             {
-                
+                max = temps;
+                count++;
             }
         }
         System.out.println(count);
